@@ -26,10 +26,10 @@
         "help": "./node_modules/.bin/nx help",
         "precise-commits": "precise-commits",
         "lint-staged": "lint-staged",
-        "webpack-bundle-analyzer": "webpack-bundle-analyzer dist/apps/sandbox/stats.json",
-        "build:prod-bundle-report": "ng build --prod --source-map --stats-json --output-hashing=none",
+        "webpack-bundle-analyzer": "webpack-bundle-analyzer dist/for-report/sandbox/stats.json",
+        "build:prod-bundle-report": "ng build --prod --source-map --stats-json --output-hashing=none --output-path=dist/for-report/sandbox",
         "stats:webpack-bundle-analyzer": "run-s build:prod-bundle-report webpack-bundle-analyzer",
-        "source-map-explorer": "source-map-explorer dist/apps/sandbox/main.js",
+        "source-map-explorer": "source-map-explorer dist/for-report/sandbox/main.js",
         "stats": "run-s build:prod-bundle-report source-map-explorer"
     },
     "husky": {
