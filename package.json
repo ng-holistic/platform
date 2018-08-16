@@ -26,9 +26,11 @@
         "help": "./node_modules/.bin/nx help",
         "precise-commits": "precise-commits",
         "lint-staged": "lint-staged",
-        "bundle-report": "webpack-bundle-analyzer dist/apps/sandbox/stats.json",
-        "build:prod-bundle-report": "ng build --prod --vendor-chunk --stats-json",
-        "stats": "run-s build:prod-bundle-report bundle-report"
+        "webpack-bundle-analyzer": "webpack-bundle-analyzer dist/apps/sandbox/stats.json",
+        "build:prod-bundle-report": "ng build --prod --source-map --stats-json --output-hashing=none",
+        "stats:webpack-bundle-analyzer": "run-s build:prod-bundle-report webpack-bundle-analyzer",
+        "source-map-explorer": "source-map-explorer dist/apps/sandbox/main.js",
+        "stats": "run-s build:prod-bundle-report source-map-explorer"
     },
     "husky": {
         "hooks": {
@@ -54,9 +56,11 @@
         "@ngrx/router-store": "6.0.1",
         "@ngrx/store": "6.0.1",
         "@nrwl/nx": "6.2.0",
+        "@types/ramda": "^0.25.24",
         "core-js": "^2.5.4",
         "ramda": "^0.25.0",
         "rxjs": "^6.0.0",
+        "source-map-explorer": "^1.6.0",
         "zone.js": "^0.8.26"
     },
     "devDependencies": {
@@ -69,7 +73,6 @@
         "@types/jasmine": "~2.8.6",
         "@types/jasminewd2": "~2.0.3",
         "@types/node": "~8.9.4",
-        "@types/ramda": "github:types/npm-ramda#dist",
         "codelyzer": "~4.2.1",
         "husky": "^1.0.0-rc.13",
         "jasmine-core": "~2.99.1",
