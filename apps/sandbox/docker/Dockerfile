@@ -23,7 +23,7 @@ RUN npm install
 RUN npm install -g @angular/cli@1.7.1 --unsafe
 
 # add app
-COPY ../.. /usr/src/app
+COPY . /usr/src/app
 
 # run tests
 # RUN ng test --watch=false
