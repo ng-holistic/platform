@@ -45,10 +45,12 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Run ci e2e (in Docker)
 
+### Sandbox app
+
 ```
-docker-compose -f apps/sandbox/Dockerfile up -d --build
-docker-compose run cypress ../../node_modules/.bin/cypress run \
- --config baseUrl=http://127.0.0.1
+docker-compose -f apps/sandbox/docker/docker-compose.yml up -d --build
+docker-compose -f apps/sandbox/docker/docker-compose.yml run cypress ./node_modules/.bin/cypress run \
+    --config baseUrl=http://127.0.0.1
 ```
 
 ## Commands
