@@ -40,7 +40,7 @@ FROM nginx:1.13.9-alpine
 
 # copy artifact build from the 'build environment'
 COPY ./nginx.conf /etc/nginx/nginx.conf
-COPY --from=builder /usr/src/app/dist/apps/scalio-base /usr/share/nginx/html
+COPY --from=builder /usr/src/app/dist/apps/sandbox /usr/share/nginx/html
 
 # expose port 80
 EXPOSE 80
