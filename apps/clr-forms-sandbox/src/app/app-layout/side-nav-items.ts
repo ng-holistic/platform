@@ -64,6 +64,10 @@ export default [
             {
                 title: 'Select',
                 path: ['/clr-controls', 'select']
+            },
+            {
+                title: 'Pairs List',
+                path: ['/clr-controls', 'pairs-list']
             }
         ]
     },
