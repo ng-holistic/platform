@@ -1,18 +1,20 @@
 import { CommonModule } from '@angular/common';
-import { ModuleWithProviders, NgModule } from '@angular/core';
+import { ModuleWithProviders, NgModule, InjectionToken } from '@angular/core';
 import { Router } from '@angular/router';
 import { ClrMainContainerModule } from '@clr/angular';
 import { HlcSideNavConfig, HLC_SIDE_NAV_CONFIG, routerSideNavConfigProvider } from '../side-nav/side-nav.component';
 import { HlcClrSideNavModule } from '../side-nav/side-nav.module';
 import { HlcClrMainLayoutComponent } from './main-layout.component';
 
-export const sideNavConfigFactory = (sideNavConfig: HlcSideNavConfig | true) => (router: Router) => {
+export function sideNavConfigFactory(router: Router, sideNavConfig: HlcSideNavConfig | true) {
     if (sideNavConfig === true) {
         return routerSideNavConfigProvider(router);
     } else {
         return sideNavConfig;
     }
-};
+}
+
+const __HLC_SIDE_NAV_CONFIG = new InjectionToken<HlcSideNavConfig>('__HLC_SIDE_NAV_CONFIG');
 
 @NgModule({
     imports: [CommonModule, ClrMainContainerModule, HlcClrSideNavModule],
@@ -31,9 +33,13 @@ export class HlcClrMainLayoutModule {
             ngModule: HlcClrMainLayoutModule,
             providers: [
                 {
+                    provide: __HLC_SIDE_NAV_CONFIG,
+                    useValue: sideNavConfig
+                },
+                {
                     provide: HLC_SIDE_NAV_CONFIG,
-                    useFactory: sideNavConfigFactory(sideNavConfig),
-                    deps: [Router]
+                    useFactory: sideNavConfigFactory,
+                    deps: [Router, __HLC_SIDE_NAV_CONFIG]
                 }
             ]
         };
