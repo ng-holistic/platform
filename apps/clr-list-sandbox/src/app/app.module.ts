@@ -12,6 +12,7 @@ import {
 } from '@ng-holistic/clr-list';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing.module';
+import { HlcClrMainLayoutModule } from '@ng-holistic/clr-common';
 
 const paginatorItems: PaginatorItems = {
     items: [
@@ -47,6 +48,7 @@ export const getTableCellFormatMap = (decimalPipe: DecimalPipe): TableCellFormat
             scrollPositionRestoration: 'enabled'
         }),
         AppRoutingModule,
+        HlcClrMainLayoutModule.forRoot(),
         HlcClrTableModule.forRoot(),
         HlcClrFilterModule.forRoot()
     ],

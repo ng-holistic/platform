@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
-import { HlcHotKeysModule } from '@ng-holistic/clr-common';
+import { HlcClrMainLayoutModule, HlcHotKeysModule } from '@ng-holistic/clr-common';
 import { AppLayoutModule } from './app-layout/app-layout.module';
 import { AppComponent } from './app.component';
 import { AppRoutingModule, routes } from './app.routing.module';
@@ -13,7 +13,8 @@ import { AppRoutingModule, routes } from './app.routing.module';
         AppLayoutModule,
         AppRoutingModule,
         RouterModule.forRoot(routes, { initialNavigation: 'enabled', useHash: true }),
-        HlcHotKeysModule.forRoot()
+        HlcHotKeysModule.forRoot(),
+        HlcClrMainLayoutModule.forRoot()
     ],
     providers: [],
     bootstrap: [AppComponent]
