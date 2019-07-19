@@ -1,4 +1,4 @@
-import { DecimalPipe, CommonModule } from '@angular/common';
+import { CommonModule, DecimalPipe } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
@@ -12,6 +12,7 @@ import {
 } from '@ng-holistic/clr-list';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing.module';
+import { HlcClrMainLayoutModule } from '@ng-holistic/clr-common';
 
 const paginatorItems: PaginatorItems = {
     items: [
@@ -31,7 +32,7 @@ const paginatorItems: PaginatorItems = {
 };
 
 export const getTableCellFormatMap = (decimalPipe: DecimalPipe): TableCellFormatMap => ({
-    number: x => decimalPipe.transform(x)
+    number: x => ({ val: decimalPipe.transform(x), cls: 'number-cell' })
 });
 
 @NgModule({
@@ -39,8 +40,15 @@ export const getTableCellFormatMap = (decimalPipe: DecimalPipe): TableCellFormat
     imports: [
         BrowserModule,
         CommonModule,
-        RouterModule.forRoot([], { initialNavigation: 'enabled', useHash: true, anchorScrolling: 'enabled' }),
+        RouterModule.forRoot([], {
+            useHash: true,
+            initialNavigation: 'enabled',
+            anchorScrolling: 'enabled',
+            onSameUrlNavigation: 'reload',
+            scrollPositionRestoration: 'enabled'
+        }),
         AppRoutingModule,
+        HlcClrMainLayoutModule.forRoot(),
         HlcClrTableModule.forRoot(),
         HlcClrFilterModule.forRoot()
     ],

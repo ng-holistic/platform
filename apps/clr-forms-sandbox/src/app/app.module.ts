@@ -16,6 +16,7 @@ import { AppRoutingModule, routes } from './app.routing.module';
 import { hlcConfigProviders } from './hlc.config';
 import { HlcClrRichTextComponent, HlcClrRichTextModule } from './shared';
 import { HlcNgSelectComponent, HlcNgSelectModule } from '@ng-holistic/ng-select';
+import { HlcClrMainLayoutModule } from '@ng-holistic/clr-common';
 
 @NgModule({
     declarations: [AppComponent],
@@ -32,6 +33,7 @@ import { HlcNgSelectComponent, HlcNgSelectModule } from '@ng-holistic/ng-select'
             DocumentUploadField: HlcClrDocumentUploadComponent,
             NgSelectField: HlcNgSelectComponent
         }),
+        HlcClrMainLayoutModule.forRoot(),
         HlcClrRichTextModule,
         HlcClrImageUploadModule,
         HlcClrFileUploadModule,
