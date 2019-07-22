@@ -2,7 +2,8 @@
     "extends": "../../tsconfig.json",
     "compilerOptions": {
         "outDir": "../../dist/out-tsc/libs/clr-list",
-        "types": ["jasmine", "node"]
+        "types": ["jasmine", "node"],
+        "isolatedModules": true
     },
     "files": ["src/test.ts"],
     "include": ["**/*.spec.ts", "**/*.d.ts"]
