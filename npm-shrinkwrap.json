@@ -12999,7 +12999,6 @@
                         "pluralize": "^1.2.1",
                         "progress": "^1.1.8",
                         "require-uncached": "^1.0.2",
-                        "shelljs": "^0.7.5",
                         "strip-bom": "^3.0.0",
                         "strip-json-comments": "~2.0.1",
                         "table": "^3.7.8",
@@ -14582,16 +14581,6 @@
                     "integrity": "sha1-NwaMLEdra69ALRSknGf1l5IfY08=",
                     "requires": {
                         "inherits": "^2.0.1"
-                    }
-                },
-                "shelljs": {
-                    "version": "0.7.7",
-                    "resolved": "https://registry.npmjs.org/shelljs/-/shelljs-0.7.7.tgz",
-                    "integrity": "sha1-svXHfvlxSPS09uImguELuoZnz/E=",
-                    "requires": {
-                        "glob": "^7.0.0",
-                        "interpret": "^1.0.0",
-                        "rechoir": "^0.6.2"
                     }
                 },
                 "slash": {
@@ -16240,9 +16229,9 @@
             }
         },
         "shelljs": {
-            "version": "0.8.3",
-            "resolved": "https://registry.npmjs.org/shelljs/-/shelljs-0.8.3.tgz",
-            "integrity": "sha512-fc0BKlAWiLpwZljmOvAOTE/gXawtCoNrP5oaY7KIaQbbyHeQVg01pSEuEGvGh3HEdBU4baCD7wQBwADmM/7f7A==",
+            "version": "0.8.5",
+            "resolved": "https://registry.npmjs.org/shelljs/-/shelljs-0.8.5.tgz",
+            "integrity": "sha512-TiwcRcrkhHvbrZbnRcFYMLl30Dfov3HKqzp5tO5b4pt6G/SezKcYhmDg15zXVBswHmctSAQKznqNW2LO5tTDow==",
             "dev": true,
             "requires": {
                 "glob": "^7.0.0",
